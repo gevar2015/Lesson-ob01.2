@@ -30,14 +30,26 @@ class Store:
         else:
             print(f"Товар '{item_name}' не найден для обновления цены.")
 
-# Пример использования класса
-store = Store("GoodFoods", "123 Main St")
-store.add_item("apples", 0.5)
-store.add_item("bananas", 0.75)
-print("Цена яблок:", store.get_price("apples"))
+# Создание объектов магазинов
+store1 = Store("FreshMarket", "100 Avenue Rd")
+store2 = Store("GreenGrocer", "200 Shopping Ln")
+store3 = Store("Organic Foods", "300 Eco Park")
 
-store.update_price("apples", 0.60)
-print("Обновленная цена яблок:", store.get_price("apples"))
+# Добавление товаров в магазины
+store1.add_item("apples", 0.5)
+store1.add_item("bananas", 0.75)
 
-store.remove_item("bananas")
-print("Цена бананов после удаления:", store.get_price("bananas"))
+store2.add_item("oranges", 0.8)
+store2.add_item("tomatoes", 1.2)
+
+store3.add_item("milk", 1.5)
+store3.add_item("bread", 1.0)
+
+# Протестировать методы на одном из магазинов
+print("\nТестирование методов для 'FreshMarket':")
+store1.add_item("pears", 0.6)
+store1.update_price("apples", 0.65)
+store1.remove_item("bananas")
+print("Цена яблок:", store1.get_price("apples"))
+print("Цена бананов:", store1.get_price("bananas"))
+
